@@ -7,7 +7,7 @@ A feature-rich social media web application where users can upload and share ima
 - [Installation](#installation)
   - [Prerequisites](#prerequisites)
   - [Clone the Repository](#clone-the-repository)
-  - [Configure Environment](#configure-environment)
+  - [Setup](#setup)
   - [Database Setup](#database-setup)
   - [Run the Application](#run-the-application)
 - [Usage](#usage)
@@ -48,19 +48,98 @@ git clone https://github.com/SinghIsWriting/Social-Gallery-PHP-App.git
 cd Social-Gallery-PHP-App
 ```
 
+### Setup
+* Install Dependencies
+Open a terminal in your project directory and run:
+```
+composer install
+```
+This will install all the necessary dependencies listed in composer.json.
+
+* Create an `.env` File
+Copy the .env.example file (if it exists) or create a new .env file in the root of your project directory:
+```
+cp .env.example .env
+```
+Open the .env file and fill in your database and other credentials:
+```
+DB_HOST=localhost
+DB_USERNAME=root
+DB_PASSWORD=
+DB_DATABASE=social_gallery
+DB_PORT=3306
+```
+
+* Load Environment Variables in PHP
+Make sure your project is loading the .env file using vlucas/phpdotenv. Check the db_connect.php file to ensure that environment variables are correctly accessed (see previous steps for loading .env).
+
 ### Database Setup
 
-1. Create a new MySQL database:
+* Ensure MySQL Apache is running (e.g., through XAMPP or WAMP).
+* Access `http://localhost/phpmyadmin` and login.
+* Create the database in MySQL:
 ```
-CREATE DATABASE picture_block;
+CREATE DATABASE social_gallery;
+```
+* Create required tables to store data using following sql commands:
+```
+-- Add Users table
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Add images table
+CREATE TABLE images (
+  id int(11) NOT NULL,
+  user_id INT NOT NULL,
+  description text DEFAULT NULL,
+  image_path varchar(255) NOT NULL,
+  uploaded_on timestamp NOT NULL DEFAULT current_timestamp(),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+)
+
+-- Add likes table
+CREATE TABLE likes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image_id INT NOT NULL,
+    user_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (image_id) REFERENCES images(id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    UNIQUE KEY unique_like (image_id, user_id)
+);
+
+-- Add comments table
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image_id INT NOT NULL,
+    user_id INT NOT NULL,
+    comment TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (image_id) REFERENCES images(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE contact_us (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
+    submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 ```
 
 ### Run the Application
-1. If you are using XAMPP/WAMP, place the project folder in the htdocs directory.
-2. Start your Apache and MySQL servers.
-3. Access the project by navigating to:
+* If you are using XAMPP/WAMP, place the project folder in the htdocs directory.
+* Start your Apache and MySQL servers.
+* Access the project by navigating to:
 ```
-http://localhost/Social-Gallery-PHP-App
+http://localhost/Social-Gallery-PHP-App/index.php
 ```
 
 ## Usage
@@ -115,7 +194,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you have any questions or need support, feel free to contact the project maintainer:
 
 * Email: sabhisheksignh343104@gmail.com
-* GitHub: SinghIsWriting
+* GitHub: `SinghIsWriting`
 * Website: www.linkedin.com/in/abhishek-singh-bba2662a9
 
 
