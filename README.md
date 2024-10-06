@@ -2,6 +2,12 @@
 
 A feature-rich social media web application where users can upload and share images, like, comment, and interact with others in a visual gallery. Registered users can connect with each other, share their work, and communicate via a contact form. The project is built using PHP, MySQL, and JavaScript, with a responsive design for modern web browsers.
 
+### Home Page
+![Social-7-10-2024_44944_pal-pal-pal wuaze com](https://github.com/user-attachments/assets/51be3b8f-5e57-40dc-9c78-db86d6019c49)
+### Detail View Page
+![Social-II_7-10-2024_4530_pal-pal-pal wuaze com](https://github.com/user-attachments/assets/2955c6b3-8d69-41d9-8832-d9a3d0a26528)
+
+
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
@@ -100,7 +106,7 @@ CREATE TABLE images (
   image_path varchar(255) NOT NULL,
   uploaded_on timestamp NOT NULL DEFAULT current_timestamp(),
   FOREIGN KEY (user_id) REFERENCES users(id)
-)
+);
 
 -- Add likes table
 CREATE TABLE likes (
