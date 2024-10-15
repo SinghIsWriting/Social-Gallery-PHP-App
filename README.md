@@ -202,8 +202,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 If you have any questions or need support, feel free to contact the project maintainer:
 
 * Email: sabhisheksignh343104@gmail.com
-* GitHub: `SinghIsWriting`
-* Website: www.linkedin.com/in/abhishek-singh-bba2662a9
+* GitHub: [SinghIsWriting](https://github.com/SinghIsWriting)
+* LinkedIn: [Abhishek Singh](https://www.linkedin.com/in/abhishek-singh-bba2662a9)
 
 
 ### Breakdown of Sections:
