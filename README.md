@@ -2,6 +2,7 @@
 
 A feature-rich social media web application where users can upload and share images, like, comment, and interact with others in a visual gallery. Registered users can connect with each other, share their work, and communicate via a contact form. The project is built using PHP, MySQL, and JavaScript, with a responsive design for modern web browsers.
 
+## Deployed Project Link [Click Here](http://pal-pal-pal.wuaze.com/social-gallery/)
 ### Home Page
 ![Social-7-10-2024_44944_pal-pal-pal wuaze com](https://github.com/user-attachments/assets/51be3b8f-5e57-40dc-9c78-db86d6019c49)
 ### Detail View Page
