@@ -138,6 +138,8 @@ CREATE TABLE contact_us (
     submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE contact_us ADD COLUMN registered_mail ENUM('yes', 'no') DEFAULT 'no';
+
 ```
 
 ### Run the Application
