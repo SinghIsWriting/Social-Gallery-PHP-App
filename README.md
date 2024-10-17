@@ -4,10 +4,10 @@ A feature-rich social media web application where users can upload and share ima
 
 ## Deployed Project Link [Click Here](http://pal-pal-pal.wuaze.com/social-gallery/)
 ### Home Page
-![Social-7-10-2024_44944_pal-pal-pal wuaze com](https://github.com/user-attachments/assets/51be3b8f-5e57-40dc-9c78-db86d6019c49)
-### Detail View Page
-![Social-II_7-10-2024_4530_pal-pal-pal wuaze com](https://github.com/user-attachments/assets/2955c6b3-8d69-41d9-8832-d9a3d0a26528)
+![S1](https://github.com/user-attachments/assets/ccc273cc-0571-4b87-831a-acd07feea4c7)
 
+### Detail View Page
+![S22](https://github.com/user-attachments/assets/6ab9b4c9-397d-433f-ab90-cc163e29c5e0)
 
 ## Table of Contents
 - [Features](#features)
